@@ -28,6 +28,7 @@ int main(int argc, char **argv) {
     
     if (!fs.isOpened()) {
         std::cerr << "[ERROR] Failed to open the file.\n";
+        return EXIT_FAILURE;
     }
 
     cv::Mat mat;
