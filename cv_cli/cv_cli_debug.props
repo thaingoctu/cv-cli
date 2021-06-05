@@ -11,7 +11,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(OPENCVDIR)x64\vc16\lib\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core452d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_core452d.lib;opencv_highgui452d.lib;opencv_imgcodecs452d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

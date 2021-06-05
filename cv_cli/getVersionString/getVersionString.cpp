@@ -8,16 +8,11 @@ int main(int argc, char **argv) {
     cv::CommandLineParser parser(argc, argv, keys);
     parser.about("Gets the OpenCV library version string.");
 
-    if (!parser.check()) {
-        parser.printErrors();
-        return EXIT_FAILURE;
-    }
-
     if (parser.has("help")) {
         parser.printMessage();
         return EXIT_SUCCESS;
     }
 
-    std::cout << cv::getVersionString();
+    std::cout << cv::getVersionString() << '\n';
     return EXIT_SUCCESS;
 }
