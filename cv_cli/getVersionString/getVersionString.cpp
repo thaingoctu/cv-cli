@@ -3,10 +3,10 @@
 
 int main(int argc, char **argv) {
     const cv::String keys = 
-        "{ h help | | Print the usage }";
+        "{ h help | | Display the usage }";
     
     cv::CommandLineParser parser(argc, argv, keys);
-    parser.about("Get the OpenCV library version string");
+    parser.about("Gets the OpenCV library version string.");
 
     if (!parser.check()) {
         parser.printErrors();
