@@ -7,10 +7,10 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(OPENCVDIR)include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(OPENCVDIR)include\;$(SolutionDir)helpers\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(OPENCVDIR)x64\vc16\lib\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OPENCVDIR)x64\vc16\lib\;C:\Users\thain\ws_cv_cli\cv-cli\cv_cli\x64\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_core452d.lib;opencv_highgui452d.lib;opencv_imgcodecs452d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

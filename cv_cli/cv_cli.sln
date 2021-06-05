@@ -9,7 +9,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imread", "imread\imread.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fsread", "fsread\fsread.vcxproj", "{D7E621B6-20B5-4C93-9B61-996746B49B77}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "helpers", "helpers\helpers.vcxitems", "{51A5F93D-4FAD-41A3-93ED-EC92ABDED9B6}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		helpers\helpers.vcxitems*{51a5f93d-4fad-41a3-93ed-ec92abded9b6}*SharedItemsImports = 9
+		helpers\helpers.vcxitems*{5cc8b645-eff7-4301-a4b0-cbd896f70da8}*SharedItemsImports = 4
+		helpers\helpers.vcxitems*{d7e621b6-20b5-4c93-9b61-996746b49b77}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
