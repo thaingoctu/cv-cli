@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
             << "isContinous = " << (mat.isContinuous() ? "true" : "false") << '\n';
     }
 
-    if (!mat.empty() && parser.has("imshow")) {
+    if (parser.has("imshow") && !mat.empty()) {
         cv::imshow(filename.c_str(), mat);
         cv::waitKey();
     }

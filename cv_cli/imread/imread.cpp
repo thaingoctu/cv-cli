@@ -107,8 +107,8 @@ int main(int argc, char **argv) {
             << "isContinous = " << (image.isContinuous() ? "true" : "false") << '\n';
     }
 
-    if (!image.empty() && parser.has("imshow")) {
-        cv::imshow(filename.c_str(), image);
+    if (parser.has("imshow") && !image.empty()) {
+        cv::imshow(filename, image);
         cv::waitKey();
     }
 
