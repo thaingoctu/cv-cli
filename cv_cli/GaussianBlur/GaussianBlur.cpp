@@ -57,13 +57,13 @@ int main(int argc, char **argv) {
         return EXIT_SUCCESS;
     }
 
-    cv::String filename{ parser.get<cv::String>("@filename") };
-    cv::String filestorage{ parser.get<cv::String>("filestorage") };
-    int ksizeW{ parser.get<int>("ksizeW") };
-    int ksizeH{ parser.get<int>("ksizeH") };
-    double sigmaX{ parser.get<double>("sigmaX") };
-    double sigmaY{ parser.get<double>("sigmaY") };
-    cv::String border_type{ parser.get<cv::String>("borderType") };
+    auto filename{ parser.get<cv::String>("@filename") };
+    auto filestorage{ parser.get<cv::String>("filestorage") };
+    auto ksizeW{ parser.get<int>("ksizeW") };
+    auto ksizeH{ parser.get<int>("ksizeH") };
+    auto sigmaX{ parser.get<double>("sigmaX") };
+    auto sigmaY{ parser.get<double>("sigmaY") };
+    auto border_type{ parser.get<cv::String>("borderType") };
 
     if (!parser.check()) {
         parser.printErrors();
@@ -110,7 +110,7 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    int border_type_mode = getBorderType(border_type);
+    auto border_type_mode = getBorderType(border_type);
 
     if (INVALID_BORDER_TYPE == border_type_mode) {
         std::cerr << "[ERROR] Invalid border type.\n";

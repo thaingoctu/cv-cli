@@ -71,23 +71,23 @@ int main(int argc, char **argv) {
         return EXIT_SUCCESS;
     }
 
-    cv::String filename{ parser.get<cv::String>("@filename") };
-    cv::String flags{ parser.get<cv::String>("flags") };
-    cv::String filestorage{ parser.get<cv::String>("filestorage") };
+    auto filename{ parser.get<cv::String>("@filename") };
+    auto flags{ parser.get<cv::String>("flags") };
+    auto filestorage{ parser.get<cv::String>("filestorage") };
 
     if (!parser.check()) {
         parser.printErrors();
         return EXIT_FAILURE;
     }
 
-    int imread_mode = getImreadMode(flags);
+    auto imread_mode = getImreadMode(flags);
 
     if (INVALID_FLAG == imread_mode) {
         std::cerr << "[ERROR] Invalid flags.\n";
         return EXIT_FAILURE;
     }
 
-    cv::Mat image = cv::imread(filename, imread_mode);
+    auto image = cv::imread(filename, imread_mode);
 
     if (image.empty()) {
         std::cout << "[WARN] imread returns an empty matrix.\n";
