@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
     }
 
     cv::String filename{ parser.get<cv::String>("@filename") };
-    cv::String flags{ parser.get<cv::String>("flags")};
+    cv::String flags{ parser.get<cv::String>("flags") };
     cv::String filestorage{ parser.get<cv::String>("filestorage") };
 
     if (!parser.check()) {

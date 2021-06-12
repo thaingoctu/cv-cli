@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
         return EXIT_SUCCESS;
     }
 
-    cv::String filename{ parser.get<cv::String>("@filename")};
+    cv::String filename{ parser.get<cv::String>("@filename") };
 
     if (!parser.check()) {
         parser.printErrors();

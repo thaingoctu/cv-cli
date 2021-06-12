@@ -11,11 +11,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fsread", "fsread\fsread.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "helpers", "helpers\helpers.vcxitems", "{51A5F93D-4FAD-41A3-93ED-EC92ABDED9B6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GaussianBlur", "GaussianBlur\GaussianBlur.vcxproj", "{F8362087-977B-400E-989F-AB0160B431DF}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		helpers\helpers.vcxitems*{51a5f93d-4fad-41a3-93ed-ec92abded9b6}*SharedItemsImports = 9
 		helpers\helpers.vcxitems*{5cc8b645-eff7-4301-a4b0-cbd896f70da8}*SharedItemsImports = 4
 		helpers\helpers.vcxitems*{d7e621b6-20b5-4c93-9b61-996746b49b77}*SharedItemsImports = 4
+		helpers\helpers.vcxitems*{f8362087-977b-400e-989f-ab0160b431df}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -48,6 +51,14 @@ Global
 		{D7E621B6-20B5-4C93-9B61-996746B49B77}.Release|x64.Build.0 = Release|x64
 		{D7E621B6-20B5-4C93-9B61-996746B49B77}.Release|x86.ActiveCfg = Release|Win32
 		{D7E621B6-20B5-4C93-9B61-996746B49B77}.Release|x86.Build.0 = Release|Win32
+		{F8362087-977B-400E-989F-AB0160B431DF}.Debug|x64.ActiveCfg = Debug|x64
+		{F8362087-977B-400E-989F-AB0160B431DF}.Debug|x64.Build.0 = Debug|x64
+		{F8362087-977B-400E-989F-AB0160B431DF}.Debug|x86.ActiveCfg = Debug|Win32
+		{F8362087-977B-400E-989F-AB0160B431DF}.Debug|x86.Build.0 = Debug|Win32
+		{F8362087-977B-400E-989F-AB0160B431DF}.Release|x64.ActiveCfg = Release|x64
+		{F8362087-977B-400E-989F-AB0160B431DF}.Release|x64.Build.0 = Release|x64
+		{F8362087-977B-400E-989F-AB0160B431DF}.Release|x86.ActiveCfg = Release|Win32
+		{F8362087-977B-400E-989F-AB0160B431DF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

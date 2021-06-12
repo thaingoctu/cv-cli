@@ -11,7 +11,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(OPENCVDIR)x64\vc16\lib\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_core452.lib;opencv_highgui452.lib;opencv_imgcodecs452.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_core452.lib;opencv_highgui452.lib;opencv_imgcodecs452.lib;opencv_imgproc452.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy $(OutDir)$(ProjectName).exe $(SolutionDir)..\bin\ /Y</Command>
