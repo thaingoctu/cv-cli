@@ -54,7 +54,7 @@ static int getImreadMode(const cv::String &flags) {
 }
 
 int main(int argc, char **argv) {
-    const cv::String keys = 
+    const cv::String keys =
         "{ h help      |        | Display the usage                              }"
         "{ v verbose   |        | Verbose mode                                   }"
         "{ imshow      |        | Display an image in a window                   }"

@@ -18,7 +18,7 @@ cv::String type2Str(int type) {
     }
 
     r += "C";
-    r += (chans+'0');
+    r += (chans + '0');
 
     return r;
 }

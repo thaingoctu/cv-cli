@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
     }
 
     cv::FileStorage fs(filename, cv::FileStorage::READ);
-    
+
     if (!fs.isOpened()) {
         std::cerr << "[ERROR] Failed to open the file.\n";
         return EXIT_FAILURE;
