@@ -1,10 +1,8 @@
 #include "helpers.hpp"
 
 cv::String type2Str(int type) {
+    int depth{ type & CV_MAT_DEPTH_MASK };
     cv::String r;
-
-    uchar depth = type & CV_MAT_DEPTH_MASK;
-    uchar chans = 1 + (type >> CV_CN_SHIFT);
 
     switch (depth) {
         case CV_8U:  r = "CV_8U"; break;
@@ -17,8 +15,7 @@ cv::String type2Str(int type) {
         default:     r = "User"; break;
     }
 
-    r += "C";
-    r += (chans + '0');
-
+    int chans{ 1 + (type >> CV_CN_SHIFT) };
+    r += "C" + std::to_string(chans);
     return r;
 }

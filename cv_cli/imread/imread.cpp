@@ -2,7 +2,7 @@
 #include "helpers.hpp"
 #include <iostream>
 
-constexpr auto INVALID_FLAG = (-1);
+constexpr auto INVALID_FLAG{ -1 };
 
 static void printFlags() {
     std::cout << "Possible flags:\n"
@@ -54,13 +54,14 @@ static int getImreadMode(const cv::String &flags) {
 }
 
 int main(int argc, char **argv) {
-    const cv::String keys =
+    const cv::String keys{
         "{ h help      |        | Display the usage                              }"
         "{ v verbose   |        | Verbose mode                                   }"
         "{ imshow      |        | Display an image in a window                   }"
         "{ filestorage |        | Write data to the specified XML/YAML/JSON file }"
         "{ @filename   | <none> | Name of file to be loaded                      }"
-        "{ flags       | color  | Mode of imread                                 }";
+        "{ flags       | color  | Mode of imread                                 }"
+    };
 
     cv::CommandLineParser parser(argc, argv, keys);
     parser.about("Loads an image from a file.");
@@ -80,21 +81,21 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    auto imread_mode = getImreadMode(flags);
+    auto imread_mode{ getImreadMode(flags) };
 
     if (INVALID_FLAG == imread_mode) {
         std::cerr << "[ERROR] Invalid flags.\n";
         return EXIT_FAILURE;
     }
 
-    auto image = cv::imread(filename, imread_mode);
+    auto image{ cv::imread(filename, imread_mode) };
 
     if (image.empty()) {
         std::cout << "[WARN] imread returns an empty matrix.\n";
     }
 
     if (parser.has("filestorage")) {
-        cv::FileStorage fs(filestorage, cv::FileStorage::WRITE);
+        cv::FileStorage fs{ filestorage, cv::FileStorage::WRITE };
         fs << "mat" << image;
     }
 

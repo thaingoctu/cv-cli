@@ -3,11 +3,12 @@
 #include <iostream>
 
 int main(int argc, char **argv) {
-    const cv::String keys =
+    const cv::String keys{
         "{ h help    |        | Display the usage                      }"
         "{ v verbose |        | Verbose mode                           }"
         "{ imshow    |        | Display an image in a window           }"
-        "{ @filename | <none> | Name of the file to read the data from }";
+        "{ @filename | <none> | Name of the file to read the data from }"
+    };
 
     cv::CommandLineParser parser(argc, argv, keys);
     parser.about("Loads data from a file storage.");
@@ -24,14 +25,14 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    cv::FileStorage fs(filename, cv::FileStorage::READ);
+    cv::FileStorage fs{ filename, cv::FileStorage::READ };
 
     if (!fs.isOpened()) {
         std::cerr << "[ERROR] Failed to open the file.\n";
         return EXIT_FAILURE;
     }
 
-    cv::Mat mat;
+    cv::Mat mat{};
     fs["mat"] >> mat;
 
     if (mat.empty()) {
@@ -48,7 +49,7 @@ int main(int argc, char **argv) {
     }
 
     if (parser.has("imshow") && !mat.empty()) {
-        cv::imshow(filename.c_str(), mat);
+        cv::imshow(filename, mat);
         cv::waitKey();
     }
 

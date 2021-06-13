@@ -2,7 +2,7 @@
 #include "helpers.hpp"
 #include <iostream>
 
-constexpr auto INVALID_BORDER_TYPE = (-1);
+constexpr auto INVALID_BORDER_TYPE{ -1 };
 
 static void printBorderTypes() {
     std::cout << "Supported border types:\n"
@@ -36,7 +36,7 @@ static int getBorderType(const cv::String &border_type) {
 }
 
 int main(int argc, char **argv) {
-    const cv::String keys =
+    const cv::String keys{
         "{ h help      |         | Display the usage                                 }"
         "{ v verbose   |         | Verbose mode                                      }"
         "{ imshow      |         | Display an image in a window                      }"
@@ -46,7 +46,8 @@ int main(int argc, char **argv) {
         "{ ksizeH      |         | Height of Gaussian kernel size                    }"
         "{ sigmaX      |         | Gaussian kernel standard deviation in X direction }"
         "{ sigmaY      | 0       | Gaussian kernel standard deviation in Y direction }"
-        "{ borderType  | default | Pixel extrapolation method                        }";
+        "{ borderType  | default | Pixel extrapolation method                        }"
+    };
 
     cv::CommandLineParser parser(argc, argv, keys);
     parser.about("Blurs an image using a Gaussian filter.");
@@ -87,14 +88,14 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    cv::FileStorage fs(filename, cv::FileStorage::READ);
+    cv::FileStorage fs{ filename, cv::FileStorage::READ };
 
     if (!fs.isOpened()) {
         std::cerr << "[ERROR] Failed to open the file.\n";
         return EXIT_FAILURE;
     }
 
-    cv::Mat src;
+    cv::Mat src{};
     fs["mat"] >> src;
 
     if (src.empty()) {
@@ -110,14 +111,14 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    auto border_type_mode = getBorderType(border_type);
+    auto border_type_mode{ getBorderType(border_type) };
 
     if (INVALID_BORDER_TYPE == border_type_mode) {
         std::cerr << "[ERROR] Invalid border type.\n";
         return EXIT_FAILURE;
     }
 
-    cv::Mat dst;
+    cv::Mat dst{};
     cv::GaussianBlur(
         src,
         dst,
@@ -128,7 +129,7 @@ int main(int argc, char **argv) {
     );
 
     if (parser.has("filestorage")) {
-        cv::FileStorage fsw(filestorage, cv::FileStorage::WRITE);
+        cv::FileStorage fsw{ filestorage, cv::FileStorage::WRITE };
         fsw << "mat" << dst;
     }
 
@@ -143,7 +144,7 @@ int main(int argc, char **argv) {
 
     if (parser.has("imshow") && !dst.empty()) {
         cv::String win_name{ "gaussian_blur_" };
-        auto pos = filename.find_last_of('\\');
+        auto pos{ filename.find_last_of('\\') };
         win_name += filename.substr(pos + 1);
 
         cv::imshow(win_name, dst);
