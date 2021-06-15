@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
         "{ flags       | color  | Mode of imread                                 }"
     };
 
-    cv::CommandLineParser parser(argc, argv, keys);
+    cv::CommandLineParser parser{ argc, argv, keys };
     parser.about("Loads an image from a file.");
 
     if (parser.has("help")) {

@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
         "{ borderType  | default | Pixel extrapolation method                        }"
     };
 
-    cv::CommandLineParser parser(argc, argv, keys);
+    cv::CommandLineParser parser{ argc, argv, keys };
     parser.about("Blurs an image using a Gaussian filter.");
 
     if (parser.has("help")) {

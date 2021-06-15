@@ -6,7 +6,7 @@ int main(int argc, char **argv) {
         "{ h help | | Display the usage }"
     };
 
-    cv::CommandLineParser parser(argc, argv, keys);
+    cv::CommandLineParser parser{ argc, argv, keys };
     parser.about("Gets the OpenCV library version string.");
 
     if (parser.has("help")) {

@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
         "{ @filename | <none> | Name of the file to read the data from }"
     };
 
-    cv::CommandLineParser parser(argc, argv, keys);
+    cv::CommandLineParser parser{ argc, argv, keys };
     parser.about("Loads data from a file storage.");
 
     if (parser.has("help")) {
